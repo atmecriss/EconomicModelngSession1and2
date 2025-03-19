@@ -1,7 +1,7 @@
 import random
 
 class Point:
-    def _init_(self, x, y):
+    def __init__(self, x, y):
         """
         Initialize a Point object
         :param x:  the x position on the axis
@@ -21,7 +21,7 @@ class Point:
         return self._str_() # use the same way of printing as str
 
     def distance_orig(self):
-        return (self.x*2 + self.y2)*0.5 # square root of the sum of x and y squared
+        return (self.x*2 + self.y**2)*0.5 # square root of the sum of x and y squared
 
     def _gt_(self, other):
         my_distance = self.distance_orig()
@@ -33,7 +33,7 @@ class Point:
         other_distance = other.distance_orig()
         return my_distance == other_distance
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     # now we need to instantiate it!
     p = Point(1,2) # p is an instance of 1 and 2
     print(f"p.x = {p.x} and p.y = {p.y}")
